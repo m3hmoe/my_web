@@ -1,0 +1,64 @@
+/* 10. تضمين الحواف داخل العرض الإجمالي لتجنب تمدد العناصر */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 40px;
+  text-align: right; 
+  /* 9. تحسين المسافة بين السطور لراحة العين */
+  line-height: 1.6;
+}
+
+input, textarea {
+  padding: 12px; /* تم تكبيرها قليلاً لتبدو أحدث */
+  /* 6. جعل الحقول متجاوبة مع الموبايل */
+  width: 100%;
+  max-width: 400px;
+  /* 7. إضافة مسافة سفلية بين الحقول */
+  margin-bottom: 15px;
+  border-radius: 8px; /* حواف دائرية أكثر نعومة */
+  border: 1px solid #ccc;
+  /* 1. حركة ناعمة عند التفاعل */
+  transition: all 0.3s ease;
+  /* 5. السماح بتكبير مربع النص بالطول فقط */
+  resize: vertical;
+}
+
+/* 8. تجميل لون النص الإرشادي (Placeholder) */
+input::placeholder, textarea::placeholder {
+  color: #adb5bd;
+}
+
+/* 3. و 2. تأثير عند الضغط/الكتابة داخل الحقل */
+input:focus, textarea:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.25);
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold; /* جعل خط الزر سميكاً */
+  /* 1. حركة ناعمة عند الانتقال */
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0b5ed7;
+  /* 2. إضافة ظل للزر عند تمرير الماوس */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. تأثير النقر على الزر (ينضغط للأسفل) */
+button:active {
+  transform: scale(0.96);
+}
