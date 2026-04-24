@@ -47,6 +47,21 @@ def contact():
 def thank_you():
     return "<h2>شكراً لرسالتك! لقد تم حفظها بنجاح.</h2> <a href='/'>العودة للرئيسية</a>"
 
+# مسار لعرض الرسائل (لوحة التحكم المصغرة)
+@app.route('/messages')
+def view_messages():
+    # 1. الاتصال بقاعدة البيانات
+    conn = sqlite3.connect('database.db')
+    
+    # 2. سحب كل البيانات من جدول الرسائل
+    cursor = conn.execute('SELECT * FROM messages')
+    all_messages = cursor.fetchall() # جلب كل الصفوف
+    
+    conn.close()
+    
+    # 3. إرسال البيانات إلى صفحة HTML لعرضها
+    return render_template('messages.html', messages=all_messages)
+
 if __name__ == '__main__':
     # تشغيل السيرفر
     app.run(debug=True)
