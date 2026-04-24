@@ -49,9 +49,3 @@ View the website:
 Open your web browser and go to http://127.0.0.1:5000
 
 ***
-
-### A Quick Tip for GitHub:
-Don't forget to replace `https://github.com/your-username/your-repo-name.git` in the "How to Run" section with the actual link to your repository after you create it! 
-
-Let me know if you need help pushing your files to GitHub!
-###
